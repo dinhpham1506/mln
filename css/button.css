@@ -1,0 +1,111 @@
+.btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 8px;
+  padding: 12px 20px;
+  color: #fffaf4;
+  background: rgba(16, 22, 42, 0.68);
+  box-shadow: 0 14px 34px rgba(4, 8, 18, 0.28);
+  cursor: pointer;
+  backdrop-filter: blur(12px);
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(110deg, transparent 0 35%, rgba(255, 255, 255, 0.28) 48%, transparent 62%);
+  transform: translateX(-130%);
+  transition: transform 420ms ease;
+}
+
+.btn:hover {
+  border-color: rgba(120, 219, 228, 0.64);
+  background: rgba(31, 44, 74, 0.78);
+  box-shadow: 0 18px 40px rgba(4, 8, 18, 0.34), 0 0 22px rgba(120, 219, 228, 0.18);
+  transform: translateY(-3px);
+}
+
+.btn:hover::before {
+  transform: translateX(130%);
+}
+
+.btn:active {
+  transform: translateY(0) scale(0.99);
+}
+
+.btn span {
+  position: relative;
+  z-index: 1;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, rgba(255, 134, 120, 0.94), rgba(91, 203, 215, 0.9));
+}
+
+.btn-secondary {
+  background: rgba(16, 22, 42, 0.62);
+}
+
+.btn-choice {
+  justify-content: flex-start;
+  width: 100%;
+  min-height: 58px;
+  text-align: left;
+}
+
+.btn-choice::after,
+.btn-danger::after,
+.btn-hope::after {
+  content: "";
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #fffaf4;
+  transform: translateY(-50%);
+  opacity: 0.82;
+}
+
+.btn-choice span,
+.btn-danger span,
+.btn-hope span {
+  padding-left: 14px;
+}
+
+.btn-danger {
+  justify-content: flex-start;
+  width: 100%;
+  border-color: rgba(255, 134, 120, 0.44);
+  background: rgba(92, 37, 47, 0.7);
+}
+
+.btn-hope {
+  justify-content: flex-start;
+  width: 100%;
+  border-color: rgba(120, 219, 228, 0.5);
+  background: rgba(28, 77, 86, 0.68);
+}
+
+.btn-icon-only {
+  width: 44px;
+  height: 44px;
+  padding: 0;
+}
+
+.ui-symbol {
+  border-radius: 50%;
+  font-size: 18px;
+}
